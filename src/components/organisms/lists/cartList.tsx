@@ -1,11 +1,6 @@
 import { CartCard } from '@/components/organisms/cards/cartCard'
+
 const menu: Menu[] = [
-  {
-    name: 'Жареный гусь с яблоками',
-    price: '890 ₽',
-    description: 'Сочный гусь, запеченный с кисло-сладкими яблоками и ароматными травами.',
-    image: '/images/yaropolk.jpg',
-  },
   {
     name: 'Медовик по-старославянски',
     price: '300 ₽',
@@ -31,12 +26,6 @@ const menu: Menu[] = [
     price: '120 ₽ за 0.3 л',
     description: 'Сбор целебных трав, дарующих бодрость и здоровье.',
     image: '/images/teaHouse.png',
-  },
-  {
-    name: 'Булочка "Улитка" с маком',
-    price: '245 ₽',
-    description: 'Немецкая булочка с маком и малиновой помадкой.',
-    image: '/images/radmila.jpg',
   },
 ]
 

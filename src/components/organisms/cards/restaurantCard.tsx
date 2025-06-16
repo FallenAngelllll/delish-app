@@ -6,10 +6,9 @@ import { useRouter } from 'next/router'
 import Button from '@/components/atoms/buttons/primaryButton'
 import { CardImage } from '@/components/atoms/CardImage/CardImage'
 import { Icon } from '@/components/atoms/icons/icon'
-import { StarRating } from '@/components/molecules/rating/starRating'
 import { InfoRow } from '@/components/atoms/RestaurantInfoRow'
+import { StarRating } from '@/components/molecules/rating/starRating'
 import { Restaurant } from '@/types/restaurants'
-
 
 export const RestaurantCard: ({
   id,
@@ -34,7 +33,7 @@ export const RestaurantCard: ({
 
   const goToMenu = (currentId: string) => {
     router.push({
-      pathname: `/menu/${id}`,
+      pathname: `/menu`,
       query: { name: encodeURIComponent(name) },
     })
   }
@@ -42,7 +41,7 @@ export const RestaurantCard: ({
   return (
     <>
       <div className='flex flex-col gap-1 rounded-md bg-white px-4 pb-4 pt-2 shadow-md lg:hidden'>
-        <h2 className='font-roboto truncate text-center text-base font-bold text-gray-800'>
+        <h2 className='truncate text-center font-roboto text-base font-bold text-gray-800'>
           {name}
         </h2>
         <CardImage src={image} alt={name} className='h-32 rounded-xl' />
@@ -64,14 +63,19 @@ export const RestaurantCard: ({
       </div>
 
       <div className='hidden min-w-[14rem] max-w-[20rem] flex-grow flex-col items-start gap-1.5 rounded-md bg-white px-4 pb-4 pt-1.5 text-left shadow-md lg:flex'>
-        <h2 className='font-roboto w-full truncate text-center text-xl font-bold text-gray-800'>
+        <h2 className='w-full truncate text-center font-roboto text-xl font-bold text-gray-800'>
           {name}
         </h2>
         <CardImage src={image} alt={name} className='h-[7.5rem]' />
-        <StarRating rating={rating} size='sm' className='flex items-center mt-1' starsClassName='space-x-2' />
+        <StarRating
+          rating={rating}
+          size='sm'
+          className='mt-1 flex items-center'
+          starsClassName='space-x-2'
+        />
         <p className='line-clamp-2 w-full flex-[2] text-sm text-gray-800'>{description}</p>
-        <InfoRow label="Тип кухни:" value={kitchenType} variant="grid" />
-        <InfoRow label="Время доставки:" value={time} />
+        <InfoRow label='Тип кухни:' value={kitchenType} variant='grid' />
+        <InfoRow label='Время доставки:' value={time} />
         <div className='flex w-full justify-between text-xs text-gray-600'>
           <span className='flex items-center'>
             <Icon name='DiscountIcon' aria-hidden='true' className='mr-1 h-4 w-4' />

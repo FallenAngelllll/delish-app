@@ -7,7 +7,6 @@ import { Car } from '@/components/atoms/icons/car'
 import { Chat } from '@/components/atoms/icons/chat'
 import { LogoPC } from '@/components/atoms/icons/logoPC'
 import { Storage } from '@/components/atoms/icons/storage'
-import Search from '@/components/ui/search/search'
 
 export default function Header() {
   const router = useRouter()
@@ -30,7 +29,7 @@ export default function Header() {
           Чат поддержки
         </a>
         <Link
-          href='/order-info'
+          href='/orderInfo'
           className='group flex items-center gap-2 text-gray-800 hover:text-blue-600 active:text-blue-700'
         >
           <div className='relative'>
@@ -40,7 +39,7 @@ export default function Header() {
           Отслеживание заказа
         </Link>
         <Link
-          href='/order-history'
+          href='/orderHistory'
           className='group flex items-center gap-2 text-gray-800 hover:text-blue-600 active:text-blue-700'
         >
           <div className='relative'>

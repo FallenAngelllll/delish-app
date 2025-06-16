@@ -1,3 +1,4 @@
+import { Heading } from '@/components/atoms/Heading'
 import { DishCard } from '@/components/organisms/cards/dish'
 
 export default function OrderDetailsCard() {
@@ -11,9 +12,7 @@ export default function OrderDetailsCard() {
         <span className='text-sm text-green-500 lg:text-base'>Доставлен</span>
       </div>
 
-      <h3 className='lg:font-roboto text-sm font-bold text-gray-800 lg:text-xl'>
-        «Трапеза Ярополка»
-      </h3>
+      <Heading level={3}>«Трапеза Ярополка»</Heading>
 
       <div className='flex flex-col gap-1'>
         <DishCard />
@@ -24,7 +23,7 @@ export default function OrderDetailsCard() {
 
       <div className='flex justify-end gap-2'>
         <span className='self-end text-xs text-gray-600 lg:text-sm'>Итого:</span>
-        <span className='lg:font-roboto text-sm font-bold text-gray-800 lg:text-xl'>1 500 ₽</span>
+        <span className='text-sm font-bold text-gray-800 lg:font-roboto lg:text-xl'>1 200 ₽</span>
       </div>
 
       <div aria-hidden='true' className='h-px w-full bg-gray-300 lg:hidden'></div>

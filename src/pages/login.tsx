@@ -1,6 +1,6 @@
 import PrimaryButton from '@/components/atoms/buttons/primaryButton'
-import LoginForm from '@/components/loginPage/loginForm'
-import LoginLinks from '@/components/loginPage/loginLinks'
+import AuthLinks from '@/components/molecules/AuthLinks'
+import LoginForm from '@/components/molecules/loginForm'
 
 export default function LoginPage() {
   return (
@@ -14,7 +14,12 @@ export default function LoginPage() {
             <LoginForm />
           </div>
           <PrimaryButton type='submit'>Войти</PrimaryButton>
-          <LoginLinks />
+          <AuthLinks
+            primaryText='У вас ещё нет аккаунта?'
+            mobileText='Нет аккаунта?'
+            linkText='Зарегистрироваться'
+            href='/registration'
+          />
         </div>
       </div>
     </div>

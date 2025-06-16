@@ -11,7 +11,8 @@ export const menu: Menu[] = [
   {
     name: 'Сырный суп с шампиньонами',
     price: '400 ₽',
-    description: 'Насыщенный сырно-сливочный вкус и аппетитный грибной аромат с нотками свежего укропа.',
+    description:
+      'Насыщенный сырно-сливочный вкус и аппетитный грибной аромат с нотками свежего укропа.',
     image: '/images/cheese.jpg',
   },
   {
@@ -35,7 +36,8 @@ export const menu: Menu[] = [
   {
     name: 'Шурпа из говядины',
     price: '500 ₽',
-    description: 'Сытный, что многие после того, как отведали его, отказываются переходить ко второму.',
+    description:
+      'Сытный, что многие после того, как отведали его, отказываются переходить ко второму.',
     image: '/images/shurpa.jpg',
   },
   {
@@ -92,7 +94,7 @@ export const menu: Menu[] = [
 
 export const MenuList = () => {
   return (
-    <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
+    <div className='grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5'>
       {menu.map(menu => (
         <MenuCard key={menu.name} {...menu} />
       ))}

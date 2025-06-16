@@ -1,13 +1,13 @@
 import { StaticImageData } from 'next/image'
-import yaropolkImg from '/public/images/yaropolk.jpg'
-import honeyImg    from '/public/images/honey.jpg'
-import slavicImg   from '/public/images/slavicFeast.png'
-import birchbarkImg   from '/public/images/birchbarkYard.jpg'
-import koptilnyaImg   from '/public/images/koptilnya.png'
-import teaImg   from '/public/images/teaHouse.png'
-import radmilaImg   from '/public/images/radmila.jpg'
-import fishImg   from '/public/images/fishArtel.png'
 
+import birchbarkImg from '/public/images/birchbarkYard.jpg'
+import fishImg from '/public/images/fishArtel.png'
+import honeyImg from '/public/images/honey.jpg'
+import koptilnyaImg from '/public/images/koptilnya.png'
+import radmilaImg from '/public/images/radmila.jpg'
+import slavicImg from '/public/images/slavicFeast.png'
+import teaImg from '/public/images/teaHouse.png'
+import yaropolkImg from '/public/images/yaropolk.jpg'
 
 export interface Restaurant {
   name: string

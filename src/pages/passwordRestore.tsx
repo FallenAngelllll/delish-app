@@ -1,6 +1,6 @@
 import PrimaryButton from '@/components/atoms/buttons/primaryButton'
-import PasswordRestoreForm from '@/components/passwordRestorePage/passwordRestoreForm'
-import PasswordRestoreLinks from '@/components/passwordRestorePage/passwordRestoreLinks'
+import AuthLinks from '@/components/molecules/AuthLinks'
+import PasswordRestoreForm from '@/components/molecules/passwordRestoreForm'
 
 export default function PasswordRestorePage() {
   return (
@@ -21,7 +21,7 @@ export default function PasswordRestorePage() {
             <PasswordRestoreForm />
           </div>
           <PrimaryButton type='submit'>Восстановить</PrimaryButton>
-          <PasswordRestoreLinks />
+          <AuthLinks primaryText='Уже зарегистрированы?' linkText='Войти в аккаунт' href='/login' />
         </div>
       </div>
     </div>

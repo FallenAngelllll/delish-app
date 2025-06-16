@@ -1,5 +1,4 @@
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  /** Полная ширина */
   fullWidth?: boolean
   /** Дополнительные классы для кастомизации */
   className?: string

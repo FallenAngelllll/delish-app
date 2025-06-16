@@ -1,10 +1,10 @@
 import React from 'react'
 
-import { MenuList } from '@/components/lists/menuList'
-import { FiltersMenu } from '@/components/ui/filters/filters'
-import Header from '@/components/ui/headers/header'
-import HeaderMobile from '@/components/ui/headers/headerMobile'
-import PageTitleWithBack from '@/components/ui/headers/pageTitleWithBack'
+import { MenuList } from '@/components/organisms/lists/menuList'
+import { FiltersMenu } from '@/components/molecules/filters'
+import Header from '@/components/organisms/headers/header'
+import HeaderMobile from '@/components/organisms/headers/headerMobile'
+import PageTitleWithBack from '@/components/organisms/headers/pageTitleWithBack'
 
 export default function MenuPage() {
   return (

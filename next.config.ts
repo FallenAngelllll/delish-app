@@ -1,12 +1,9 @@
-import type { NextConfig } from "next";
+/** @type {import('next').NextConfig} */
 
-const nextConfig: NextConfig = {
+const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
   },
-}
-
-module.exports = {
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -15,4 +12,4 @@ module.exports = {
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

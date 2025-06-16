@@ -1,4 +1,10 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+
 export const OrderCard = () => {
+  const router = useRouter()
+
   return (
     <>
       <div className='grid grid-cols-[auto_auto_auto] grid-rows-[auto_auto_auto] gap-y-2 rounded-md bg-white px-6 py-2 shadow-md lg:hidden'>
@@ -13,10 +19,11 @@ export const OrderCard = () => {
           «Трапеза Ярополка»
         </span>
         <span className='col-start-3 row-start-2 justify-self-end text-sm font-bold text-gray-800'>
-          1 500 ₽
+          1 200 ₽
         </span>
         <button
           type='button'
+          onClick={() => router.push('/orderInfo')}
           className='col-span-3 col-start-1 row-start-3 rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-bold text-gray-800 hover:border-gray-600 active:border-gray-800'
         >
           Подробнее
@@ -30,10 +37,11 @@ export const OrderCard = () => {
           <span className='flex-1 truncate text-base text-gray-800'>«Трапеза Ярополка»</span>
         </div>
         <div className='flex flex-shrink-0 items-center gap-9'>
-          <span className='flex-shrink-0 text-base font-bold text-gray-800'>1 500 ₽</span>
+          <span className='flex-shrink-0 text-base font-bold text-gray-800'>1 200 ₽</span>
           <span className='flex-shrink-0 text-base text-green-500'>Доставлен</span>
           <button
             type='button'
+            onClick={() => router.push('/orderInfo')}
             className='min-w-[15.5rem] rounded-md border-2 border-gray-300 bg-white px-4 py-2 text-base font-bold text-gray-800 hover:border-gray-600 active:border-gray-800'
           >
             Подробнее

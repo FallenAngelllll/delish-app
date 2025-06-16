@@ -1,6 +1,6 @@
 import PrimaryButton from '@/components/atoms/buttons/primaryButton'
-import RegistrationForm from '@/components/registrationPage/registrationForm'
-import RegistrationLinks from '@/components/registrationPage/registrationLinks'
+import AuthLinks from '@/components/molecules/AuthLinks'
+import RegistrationForm from '@/components/organisms/registrationForm'
 
 export default function RegistrationPage() {
   return (
@@ -17,7 +17,7 @@ export default function RegistrationPage() {
             <RegistrationForm />
           </div>
           <PrimaryButton type='submit'>Зарегистрироваться</PrimaryButton>
-          <RegistrationLinks />
+          <AuthLinks primaryText='Уже зарегистрированы?' linkText='Войти в аккаунт' href='/login' />
         </div>
       </div>
     </div>

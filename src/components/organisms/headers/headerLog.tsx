@@ -3,7 +3,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'
 
 import { LogoPC } from '@/components/atoms/icons/logoPC'
 import { User } from '@/components/atoms/icons/user'
-import Search from '@/components/ui/search/search'
+import Search from '@/components/molecules/search'
 
 export default function HeaderLog() {
   return (
