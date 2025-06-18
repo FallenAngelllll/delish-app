@@ -4,6 +4,7 @@ import { Basket } from '@/components/atoms/icons/basket'
 import { BMenu } from '@/components/atoms/icons/bMenu'
 import { Logo } from '@/components/atoms/icons/logo'
 import BurgerMenu from '@/components/organisms/burgerMenu/burgerMenu'
+import Link from 'next/link'
 
 export default function HeaderMobile() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -20,13 +21,13 @@ export default function HeaderMobile() {
           <BMenu aria-hidden='true' className='h-6 w-6' />
         </button>
         <Logo aria-hidden='true' />
-        <button
-          type='button'
-          aria-label='Открыть корзину'
-          className='flex h-7 w-7 items-center justify-center'
-        >
-          <Basket aria-hidden='true' className='h-6 w-6' />
-        </button>
+<Link
+  href="/cart"
+  aria-label="Открыть корзину"
+  className="flex h-7 w-7 items-center justify-center"
+>
+  <Basket aria-hidden="true" className="h-6 w-6" />
+</Link>
       </header>
       {menuOpen && <BurgerMenu onClose={() => setMenuOpen(false)} />}
     </>
