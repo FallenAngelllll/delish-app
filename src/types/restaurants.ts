@@ -1,3 +1,5 @@
+import { StaticImageData } from 'next/image'
+
 export interface Restaurant {
   id: string
   name: string
@@ -6,7 +8,8 @@ export interface Restaurant {
   kitchenType: string
   time: string
   price: string
-  image: string
+  image: StaticImageData // ВАЖНО
   recent: boolean
   favorite: boolean
+  aboveFold?: boolean
 }

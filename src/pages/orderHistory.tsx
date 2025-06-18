@@ -7,12 +7,8 @@ import { OrderCard } from '@/components/organisms/cards/orderCard'
 import PageTitleWithBack from '@/components/organisms/headers/pageTitleWithBack'
 
 export default function OrderHistoryPage() {
-
   return (
-    <MainLayout
-      backgroundFit='cover'
-      containerClassName='mx-auto flex w-full max-w-screen-xl flex-col gap-6 px-5 py-5 lg:px-12 lg:py-8'
-    >
+    <MainLayout backgroundFit='cover'>
       <PageTitleWithBack title='Все заказы' />
       <div className='flex flex-col gap-1'>
         <OrderCard />

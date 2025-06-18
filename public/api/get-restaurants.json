@@ -1,4 +1,16 @@
 [
+    {
+    "id": "13",
+    "name": "Огонь и Мясо",
+    "rating": 5,
+    "description": "Гриль-меню, томлёные рёбра и бургеры на открытом огне",
+    "kitchenType": "барбекю",
+    "time": "40–50 минут",
+    "price": "1 800–2 300 ₽",
+    "image": "/images/meat.jpg",
+    "recent": true,
+    "favorite": true
+  },
   {
     "id": "1",
     "name": "Трапеза Ярополка",
@@ -12,6 +24,18 @@
     "favorite":false
   },
   {
+    "id": "15",
+    "name": "Сладкий Штрудель",
+    "rating": 4,
+    "description": "Десерты, выпечка и торты из свежих ингредиентов",
+    "kitchenType": "кондитерская",
+    "time": "20–30 минут",
+    "price": "600–900 ₽",
+    "image": "/images/dessert.jpg",
+    "recent": true,
+    "favorite": false
+  },
+  {
     "id": "2",
     "name": "Мёд и перец",
     "rating": 1,
@@ -21,12 +45,12 @@
     "price": "2 000–2 500 ₽",
     "image": "/images/honey.jpg",
     "recent": true,
-    "favorite": true
+    "favorite": false
   },
   {
     "id": "3",
     "name": "Славянский пир",
-    "rating": 2,
+    "rating": 3,
     "description": "Аутентичные рецепты, блюда для гурманов",
     "kitchenType": "русская",
     "time": "25–35 минут",
@@ -44,6 +68,18 @@
     "time": "20–30 минут",
     "price": "1 000–1 400 ₽",
     "image": "/images/birchbarkYard.jpg",
+    "recent": true,
+    "favorite": false
+  },
+  {
+    "id": "10",
+    "name": "Брассерия Авеню",
+    "rating": 4,
+    "description": "Пастерии, ризотто и закуски в европейском стиле",
+    "kitchenType": "европейская",
+    "time": "30–40 минут",
+    "price": "1 400–2 100 ₽",
+    "image": "/images/italia.jpg",
     "recent": true,
     "favorite": false
   },
@@ -93,102 +129,66 @@
     "price": "2 000–2 400 ₽",
     "image": "/images/fishArtel.png",
     "recent": false,
-    "favorite": true
+    "favorite": false
   },
-  {
-    "id": "1",
-    "name": "Трапеза Ярополка",
-    "rating": 5,
-    "description": "Традиционная кухня",
+  { 
+    "id": "9",
+    "name": "Дом у Дубравы",
+    "rating": 3,
+    "description": "Домашние блюда по старославянским рецептам",
     "kitchenType": "славянская",
-    "time": "30–40 минут",
-    "price": "1 500–2 000 ₽",
-    "image": "/images/yaropolk.jpg",
-    "recent": true,
-    "favorite": false
-  },
-  {
-    "id": "2",
-    "name": "Мёд и перец",
-    "rating": 1,
-    "description": "Современные блюда с акцентом на местные продукты",
-    "kitchenType": "микс кулинарных традиций",
-    "time": "40–50 минут",
-    "price": "2 000–2 500 ₽",
-    "image": "/images/honey.jpg",
-    "recent": true,
-    "favorite": false
-  },
-  {
-    "id": "3",
-    "name": "Славянский пир",
-    "rating": 2,
-    "description": "Аутентичные рецепты, блюда для гурманов",
-    "kitchenType": "русская",
-    "time": "25–35 минут",
-    "price": "1 200–1 500 ₽",
-    "image": "/images/slavicFeast.png",
-    "recent": false,
-    "favorite": true
-  },
-  {
-    "id": "4",
-    "name": "Берестяной двор",
-    "rating": 4,
-    "description": "Блюда в старинном стиле, традиционные супы и пироги",
-    "kitchenType": "традиционная русская",
-    "time": "20–30 минут",
-    "price": "1 000–1 400 ₽",
-    "image": "/images/birchbarkYard.jpg",
-    "recent": false,
-    "favorite": true
-  },
-  {
-    "id": "5",
-    "name": "Коптильня",
-    "rating": 4,
-    "description": "Мясо на дровах и ароматные копчёности",
-    "kitchenType": "барбекю",
-    "time": "30–40 минут",
-    "price": "1 500–2 000 ₽",
-    "image": "/images/koptilnya.png",
-    "recent": false,
-    "favorite": false
-  },
-  {
-    "id": "6",
-    "name": "Чайный дом",
-    "rating": 4,
-    "description": "Секреты китайской и японской кухни, традиционные чаи",
-    "kitchenType": "азиатская",
     "time": "35–45 минут",
-    "price": "1 200–1 800 ₽",
-    "image": "/images/teaHouse.png",
-    "recent": true,
-    "favorite": false
+    "price": "1 300–1 800 ₽",
+    "image": "/images/home.jpg",
+    "recent": false,
+    "favorite": true
   },
   {
-    "id": "7",
-    "name": "Булочная у Радмилы",
+    "id": "11",
+    "name": "Жаровня",
     "rating": 5,
-    "description": "Свежая выпечка, пироги и домашние десерты",
-    "kitchenType": "кондитерская",
-    "time": "15–25 минут",
-    "price": "500–1 000 ₽",
-    "image": "/images/radmila.jpg",
+    "description": "Пельмени, жаркое и окрошка с душой",
+    "kitchenType": "русская",
+    "time": "25–30 минут",
+    "price": "1 100–1 600 ₽",
+    "image": "/images/jarovnya.jpg",
+    "recent": true,
+    "favorite": true
+  },
+  {
+    "id": "12",
+    "name": "Хлеб да Соль",
+    "rating": 2,
+    "description": "Квашеная капуста, уха и каши — традиции предков",
+    "kitchenType": "традиционная русская",
+    "time": "20–25 минут",
+    "price": "900–1 300 ₽",
+    "image": "/images/bread.jpg",
     "recent": false,
     "favorite": false
   },
   {
-    "id": "8",
-    "name": "Рыбацкая артель",
+    "id": "14",
+    "name": "Восточный Лотос",
     "rating": 3,
-    "description": "Морепродукты и свежая рыба с авторской подачей",
+    "description": "Суши, вок и специи с тонким ароматом Востока",
+    "kitchenType": "азиатская",
+    "time": "30–35 минут",
+    "price": "1 300–1 900 ₽",
+    "image": "/images/sushi.jpg",
+    "recent": false,
+    "favorite": false
+  },
+  {
+    "id": "16",
+    "name": "Морская Гавань",
+    "rating": 5,
+    "description": "Креветки, сибас и устрицы в авторском исполнении",
     "kitchenType": "рыбная",
     "time": "40–50 минут",
-    "price": "2 000–2 400 ₽",
-    "image": "/images/fishArtel.png",
+    "price": "2 200–2 800 ₽",
+    "image": "/images/gavan.jpeg",
     "recent": false,
-    "favorite": false
+    "favorite": true
   }
 ]

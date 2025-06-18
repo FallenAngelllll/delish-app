@@ -15,7 +15,7 @@ interface MainLayoutProps {
 const MainLayout = ({
   children,
   backgroundFit = 'contain',
-  containerClassName = 'mx-auto flex w-full max-w-screen-xl flex-col gap-7 px-5 py-5 lg:items-center lg:px-12 lg:py-8 2xl:max-w-screen-2xl',
+  containerClassName = 'mx-auto flex w-full max-w-screen-xl flex-col gap-6 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl',
 }: MainLayoutProps) => {
   return (
     <div className='scrollbar-hidden relative min-h-screen overflow-y-auto lg:bg-gray-100 lg:bg-none'>

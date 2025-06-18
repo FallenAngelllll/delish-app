@@ -9,6 +9,7 @@ import { Icon } from '@/components/atoms/icons/icon'
 import { InfoRow } from '@/components/atoms/RestaurantInfoRow'
 import { StarRating } from '@/components/molecules/rating/starRating'
 import { Restaurant } from '@/types/restaurants'
+import { restaurants } from '@/public/lib/getRestaurants'
 
 export const RestaurantCard: ({
   id,
@@ -19,6 +20,7 @@ export const RestaurantCard: ({
   time,
   price,
   image,
+  aboveFold,
 }: Restaurant) => JSX.Element = ({
   id,
   name,
@@ -28,12 +30,13 @@ export const RestaurantCard: ({
   time,
   price,
   image,
+  aboveFold = false,
 }) => {
   const router = useRouter()
 
   const goToMenu = (currentId: string) => {
     router.push({
-      pathname: `/menu`,
+      pathname: `/menu/${id}`,
       query: { name: encodeURIComponent(name) },
     })
   }
@@ -44,7 +47,7 @@ export const RestaurantCard: ({
         <h2 className='truncate text-center font-roboto text-base font-bold text-gray-800'>
           {name}
         </h2>
-        <CardImage src={image} alt={name} className='h-32 rounded-xl' />
+        <CardImage src={image} alt={name} className='h-32 rounded-xl' aboveFold={aboveFold} />
         <div className='flex items-center justify-between gap-2'>
           <StarRating rating={rating} size='sm' className='flex space-x-2' />
           <p className='truncate text-xs text-gray-600'>{kitchenType}</p>
@@ -66,7 +69,7 @@ export const RestaurantCard: ({
         <h2 className='w-full truncate text-center font-roboto text-xl font-bold text-gray-800'>
           {name}
         </h2>
-        <CardImage src={image} alt={name} className='h-[7.5rem]' />
+        <CardImage src={image} alt={name} className='h-[7.5rem]' aboveFold={aboveFold} />
         <StarRating
           rating={rating}
           size='sm'

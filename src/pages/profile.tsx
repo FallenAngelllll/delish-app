@@ -1,8 +1,8 @@
-import ProfileAvatar from '@/components/molecules/profileAvatar'
 import ProfileDeleteButton from '@/components/atoms/buttons/profileDeleteButton'
-import ProfileForm from '@/components/organisms/profileForm'
+import ProfileAvatar from '@/components/molecules/profileAvatar'
 import Header from '@/components/organisms/headers/header'
 import HeaderMobile from '@/components/organisms/headers/headerMobile'
+import ProfileForm from '@/components/organisms/profileForm'
 
 export default function ProfilePage() {
   return (
