@@ -90,9 +90,9 @@ export default function MainPage() {
   return (
     <MainLayout
       backgroundFit='cover'
-      containerClassName='mx-auto flex w-full max-w-screen-xl flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'
+      containerClassName='mx-auto flex w-full max-w-screen-xl lg:items-center flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'
     >
-      <Heading className='text-center'>Все рестораны</Heading>
+      <Heading>Все рестораны</Heading>
 
       <div className='lg:hidden'>
         <Tabs activeTab={activeTab} onChangeTab={setActiveTab} />
