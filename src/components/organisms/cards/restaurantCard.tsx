@@ -8,8 +8,8 @@ import { CardImage } from '@/components/atoms/CardImage/CardImage'
 import { Icon } from '@/components/atoms/icons/icon'
 import { InfoRow } from '@/components/atoms/RestaurantInfoRow'
 import { StarRating } from '@/components/molecules/rating/starRating'
-import { Restaurant } from '@/types/restaurants'
 import { restaurants } from '@/public/lib/getRestaurants'
+import { Restaurant } from '@/types/restaurants'
 
 export const RestaurantCard: ({
   id,

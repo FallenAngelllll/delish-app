@@ -18,8 +18,7 @@ export default function BurgerMenu({ onClose }: BurgerMenuProps) {
   ]
 
   return (
-    <div className="fixed inset-0 z-50 flex flex-col bg-black/80 bg-cover bg-center lg:hidden"
-  style={{ backgroundImage: "url('/images/bgImageM.jpg')" }}>
+    <div className='fixed inset-0 z-50 flex flex-col bg-white bg-cover bg-center lg:hidden'>
       <div className='flex justify-between p-4'>
         <Icon name='Logo' aria-hidden='true' className='h-8 w-auto' />
         <button onClick={onClose} aria-label='Закрыть меню' className='h-6 w-6'>

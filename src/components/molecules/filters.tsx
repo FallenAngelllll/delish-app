@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { Listbox } from '@headlessui/react'
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid'
+
 import { cn } from '@/utils/cn'
 
 const kitchenTypes = [
@@ -31,7 +32,7 @@ function renderListbox(
   placeholder: string,
   options: string[],
   selected: string | null,
-  onChange: (v: string | null) => void
+  onChange: (v: string | null) => void,
 ) {
   return (
     <div className='relative w-full'>
@@ -39,12 +40,12 @@ function renderListbox(
         {({ open }) => (
           <>
             <Listbox.Button
-  className={cn(
-    'w-full cursor-pointer rounded-md border bg-white py-2 pl-3 pr-10 text-left text-sm',
-    open ? 'border-blue-500' : 'border-gray-300',
-    'focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500 focus-visible:outline-offset-2'
-  )}
->
+              className={cn(
+                'w-full cursor-pointer rounded-md border bg-white py-2 pl-3 pr-10 text-left text-sm',
+                open ? 'border-blue-500' : 'border-gray-300',
+                'focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
+              )}
+            >
               {selected ?? placeholder}
               {open ? (
                 <ChevronUpIcon
@@ -102,9 +103,15 @@ export function Filters({
 }: FiltersProps) {
   return (
     <div className='flex w-full flex-col gap-2 lg:flex-row lg:gap-1.5 lg:self-start'>
-      <div className='lg:w-60'>{renderListbox('Тип кухни', kitchenTypes, kitchenFilter, onChangeKitchen)}</div>
-      <div className='lg:w-60'>{renderListbox('Рейтинг', ratings, ratingFilter, onChangeRating)}</div>
-      <div className='lg:w-60'>{renderListbox('Время доставки', deliveryTimes, timeFilter, onChangeTime)}</div>
+      <div className='lg:w-60'>
+        {renderListbox('Тип кухни', kitchenTypes, kitchenFilter, onChangeKitchen)}
+      </div>
+      <div className='lg:w-60'>
+        {renderListbox('Рейтинг', ratings, ratingFilter, onChangeRating)}
+      </div>
+      <div className='lg:w-60'>
+        {renderListbox('Время доставки', deliveryTimes, timeFilter, onChangeTime)}
+      </div>
     </div>
   )
 }
@@ -134,7 +141,7 @@ export function FiltersMenu({ menu, setFilterGroup }: FiltersMenuProps) {
               className={cn(
                 'w-full cursor-pointer rounded-md border bg-white py-2 pl-3 pr-10 text-left text-sm',
                 open ? 'border-blue-500' : 'border-gray-300',
-                'focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500 focus-visible:outline-offset-2'
+                'focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-blue-500',
               )}
             >
               {selectedCategory ?? 'Категория'}
@@ -155,7 +162,10 @@ export function FiltersMenu({ menu, setFilterGroup }: FiltersMenuProps) {
                 key='all'
                 value={null}
                 className={({ active }) =>
-                  cn('cursor-pointer select-none py-2 pl-4 text-sm', active && 'bg-gray-100 text-blue-500')
+                  cn(
+                    'cursor-pointer select-none py-2 pl-4 text-sm',
+                    active && 'bg-gray-100 text-blue-500',
+                  )
                 }
               >
                 Все категории
@@ -165,7 +175,10 @@ export function FiltersMenu({ menu, setFilterGroup }: FiltersMenuProps) {
                   key={category}
                   value={category}
                   className={({ active }) =>
-                    cn('cursor-pointer select-none py-2 pl-4 text-sm', active && 'bg-gray-100 text-blue-500')
+                    cn(
+                      'cursor-pointer select-none py-2 pl-4 text-sm',
+                      active && 'bg-gray-100 text-blue-500',
+                    )
                   }
                 >
                   {category}

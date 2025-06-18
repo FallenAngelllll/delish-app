@@ -3,22 +3,22 @@ import { CameraIcon } from '@heroicons/react/24/outline'
 
 export default function ProfileAvatar() {
   return (
-<div className='relative w-[92px] h-[92px] self-center lg:self-start'>
-  <Image
-    src='/images/avatar.svg'
-    alt='Аватар пользователя'
-    width={92}
-    height={92}
-    className='rounded-full'
-    priority // важно!
-  />
-  <button
-    type='button'
-    aria-label='Изменить аватар профиля'
-    className='absolute bottom-0 right-[-1.25rem] flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 shadow-md hover:bg-blue-600 active:bg-blue-700'
-  >
-    <CameraIcon className='h-6 w-6 text-white' />
-  </button>
-</div>
+    <div className='relative h-[92px] w-[92px] self-center lg:self-start'>
+      <Image
+        src='/images/avatar.svg'
+        alt='Аватар пользователя'
+        width={92}
+        height={92}
+        className='rounded-full'
+        priority // важно!
+      />
+      <button
+        type='button'
+        aria-label='Изменить аватар профиля'
+        className='absolute bottom-0 right-[-1.25rem] flex h-10 w-10 items-center justify-center rounded-full bg-blue-500 shadow-md hover:bg-blue-600 active:bg-blue-700'
+      >
+        <CameraIcon className='h-6 w-6 text-white' />
+      </button>
+    </div>
   )
 }

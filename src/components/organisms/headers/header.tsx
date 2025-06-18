@@ -14,7 +14,11 @@ export default function Header() {
 
   return (
     <header className='hidden lg:flex lg:w-full lg:items-center lg:justify-between lg:border-b lg:border-gray-300 lg:bg-white lg:px-6 lg:py-4'>
-      <Link href='/' aria-label='Перейти на главную страницу' className='focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-blue-500 focus-visible:outline-offset-1 rounded'>
+      <Link
+        href='/'
+        aria-label='Перейти на главную страницу'
+        className='rounded focus:outline-none focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-blue-500'
+      >
         <LogoPC aria-hidden='true' />
       </Link>
       <nav role='navigation' aria-label='Навигация' className='ml-auto flex items-center gap-6'>

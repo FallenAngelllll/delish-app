@@ -11,18 +11,18 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <Head>
         <link
-          rel="preload"
-          href="/fonts/Inter-VariableFont_opsz,wght.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
+          rel='preload'
+          href='/fonts/Inter-VariableFont_opsz,wght.ttf'
+          as='font'
+          type='font/ttf'
+          crossOrigin='anonymous'
         />
         <link
-          rel="preload"
-          href="/fonts/Roboto-VariableFont_wdth,wght.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
+          rel='preload'
+          href='/fonts/Roboto-VariableFont_wdth,wght.ttf'
+          as='font'
+          type='font/ttf'
+          crossOrigin='anonymous'
         />
         <title>Веб-приложение службы доставки еды</title>
         <meta charSet='utf-8' />

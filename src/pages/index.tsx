@@ -1,6 +1,6 @@
 'use client'
 
-import React, { Fragment, useEffect, useState, useMemo } from 'react'
+import React, { Fragment, useEffect, useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 
 import { getRestaurantList } from '@/api/get-restaurant-list'
@@ -46,44 +46,39 @@ export default function MainPage() {
     if (activeTab === 'favorites') list = list.filter(r => r.favorite)
     else if (activeTab === 'recent') list = list.filter(r => r.recent)
 
-    if (kitchenFilter) list = list.filter(r =>
-      r.kitchenType.toLowerCase().includes(kitchenFilter.toLowerCase())
-    )
-    if (ratingFilter) list = list.filter(r =>
-      r.rating === Number(ratingFilter[0])
-    )
-    if (timeFilter) list = list.filter(r => {
-      const range = parseRange(r.time)
-      if (!range) return false
-      const [min, max] = range
-      if (timeFilter === 'До 30 минут') return max <= 30
-      const filterRange = parseRange(timeFilter)
-      if (!filterRange) return false
-      const [low, high] = filterRange
-      return min >= low && max <= high
-    })
+    if (kitchenFilter)
+      list = list.filter(r => r.kitchenType.toLowerCase().includes(kitchenFilter.toLowerCase()))
+    if (ratingFilter) list = list.filter(r => r.rating === Number(ratingFilter[0]))
+    if (timeFilter)
+      list = list.filter(r => {
+        const range = parseRange(r.time)
+        if (!range) return false
+        const [min, max] = range
+        if (timeFilter === 'До 30 минут') return max <= 30
+        const filterRange = parseRange(timeFilter)
+        if (!filterRange) return false
+        const [low, high] = filterRange
+        return min >= low && max <= high
+      })
     return list
   }, [restaurants, activeTab, kitchenFilter, ratingFilter, timeFilter])
 
-
   const filteredByFilters = useMemo(() => {
     let list = [...restaurants]
-    if (kitchenFilter) list = list.filter(r =>
-      r.kitchenType.toLowerCase().includes(kitchenFilter.toLowerCase())
-    )
-    if (ratingFilter) list = list.filter(r =>
-      r.rating === Number(ratingFilter[0])
-    )
-    if (timeFilter) list = list.filter(r => {
-      const range = parseRange(r.time)
-      if (!range) return false
-      const [min, max] = range
-      if (timeFilter === 'До 30 минут') return max <= 30
-      const filterRange = parseRange(timeFilter)
-      if (!filterRange) return false
-      const [low, high] = filterRange
-      return min >= low && max <= high
-    })
+    if (kitchenFilter)
+      list = list.filter(r => r.kitchenType.toLowerCase().includes(kitchenFilter.toLowerCase()))
+    if (ratingFilter) list = list.filter(r => r.rating === Number(ratingFilter[0]))
+    if (timeFilter)
+      list = list.filter(r => {
+        const range = parseRange(r.time)
+        if (!range) return false
+        const [min, max] = range
+        if (timeFilter === 'До 30 минут') return max <= 30
+        const filterRange = parseRange(timeFilter)
+        if (!filterRange) return false
+        const [low, high] = filterRange
+        return min >= low && max <= high
+      })
     return list
   }, [restaurants, kitchenFilter, ratingFilter, timeFilter])
 
@@ -93,7 +88,10 @@ export default function MainPage() {
   const hasMore = visibleCount < filtered.length
 
   return (
-    <MainLayout backgroundFit='cover' containerClassName='mx-auto flex w-full max-w-screen-xl flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'>
+    <MainLayout
+      backgroundFit='cover'
+      containerClassName='mx-auto flex w-full max-w-screen-xl flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'
+    >
       <Heading className='text-center'>Все рестораны</Heading>
 
       <div className='lg:hidden'>
@@ -111,20 +109,20 @@ export default function MainPage() {
 
       {!isLoading && !isError ? (
         <Fragment>
-          <div className='lg:hidden flex flex-col gap-4'>
+          <div className='flex flex-col gap-4 lg:hidden'>
             <RestaurantList list={mobileList} />
             {hasMore && (
               <button
                 type='button'
                 onClick={() => setVisibleCount(prev => prev + INCREMENT)}
-                className='px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 active:bg-blue-800'
+                className='rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800'
               >
                 Показать ещё
               </button>
             )}
           </div>
-          
-          <div className="hidden lg:flex flex-col gap-7">
+
+          <div className='hidden flex-col gap-7 lg:flex'>
             <RestaurantList list={filteredByFilters} />
             <Heading level={2}>Избранные рестораны</Heading>
             <RestaurantList list={filteredByFilters.filter(r => r.favorite)} />
