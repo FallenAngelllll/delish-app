@@ -47,7 +47,13 @@ export const RestaurantCard: ({
         <h2 className='truncate text-center font-roboto text-base font-bold text-gray-800'>
           {name}
         </h2>
-        <CardImage src={image} alt={name} className='h-32 rounded-xl' aboveFold={aboveFold} />
+        <CardImage
+          src={image}
+          alt={name}
+          sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+          aboveFold={aboveFold}
+          className='h-32 rounded-xl'
+        />
         <div className='flex items-center justify-between gap-2'>
           <StarRating rating={rating} size='sm' className='flex space-x-2' />
           <p className='truncate text-xs text-gray-600'>{kitchenType}</p>
@@ -69,7 +75,13 @@ export const RestaurantCard: ({
         <h2 className='w-full truncate text-center font-roboto text-xl font-bold text-gray-800'>
           {name}
         </h2>
-        <CardImage src={image} alt={name} className='h-[7.5rem]' aboveFold={aboveFold} />
+        <CardImage
+          src={image}
+          alt={name}
+          sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+          aboveFold={aboveFold}
+          className='h-32 rounded-xl'
+        />
         <StarRating
           rating={rating}
           size='sm'
