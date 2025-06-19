@@ -134,7 +134,7 @@ export default function MainPage() {
               {all.length > 0 ? (
                 <RestaurantList list={all} />
               ) : (
-                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
+                <p className=' text-gray-500'>Ничего не найдено</p>
               )}
             </div>
 
@@ -143,7 +143,7 @@ export default function MainPage() {
               {favorites.length > 0 ? (
                 <RestaurantList list={favorites} />
               ) : (
-                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
+                <p className=' text-gray-500'>Ничего не найдено</p>
               )}
             </div>
 
@@ -152,7 +152,7 @@ export default function MainPage() {
               {recent.length > 0 ? (
                 <RestaurantList list={recent} />
               ) : (
-                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
+                <p className=' text-gray-500'>Ничего не найдено</p>
               )}
             </div>
           </div>
