@@ -125,7 +125,7 @@ export default function MainPage() {
                 )}
               </>
             ) : (
-              <p className='text-gray-500 text-center'>Ничего не найдено</p>
+              <p className='text-center text-gray-500'>Ничего не найдено</p>
             )}
           </div>
 
@@ -134,25 +134,25 @@ export default function MainPage() {
               {all.length > 0 ? (
                 <RestaurantList list={all} />
               ) : (
-                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
               )}
             </div>
 
-            <div className='gap-7'>
+            <div className='flex flex-col gap-7'>
               <Heading level={2}>Избранные рестораны</Heading>
               {favorites.length > 0 ? (
                 <RestaurantList list={favorites} />
               ) : (
-                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
               )}
             </div>
 
-            <div className='gap-7'>
+            <div className='flex flex-col gap-7'>
               <Heading level={2}>Недавно заказывали</Heading>
               {recent.length > 0 ? (
                 <RestaurantList list={recent} />
               ) : (
-                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+                <p className='mt-5 text-gray-500'>Ничего не найдено</p>
               )}
             </div>
           </div>

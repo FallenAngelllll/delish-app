@@ -17,11 +17,11 @@ export const MenuCard: React.FC<Menu> = ({ name, price, description, image }) =>
   return (
     <div className='flex h-full flex-col gap-2 rounded-md bg-white px-4 pb-3 pt-2 shadow-md lg:px-4 lg:pb-4 lg:pt-3'>
       <CardImage
-  src={image}
-  alt={name}
-  sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
-  className='h-32 rounded-xl'
-/>
+        src={image}
+        alt={name}
+        sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+        className='h-32 rounded-xl'
+      />
       <div className='flex items-center gap-1'>
         <span className='flex items-center truncate font-roboto text-xl font-bold text-green-700 lg:hidden'>
           {price}
@@ -37,7 +37,7 @@ export const MenuCard: React.FC<Menu> = ({ name, price, description, image }) =>
           className='mt-auto flex w-full items-center justify-center rounded-md bg-blue-600 py-2 hover:bg-blue-700 active:bg-blue-800'
           onClick={() => setCount(1)}
         >
-          <Icon name="Basket" aria-hidden='true' className="text-white" />
+          <Icon name='Basket' aria-hidden='true' className='text-white' />
         </button>
       ) : (
         <div className='mt-auto flex w-full items-center gap-1'>
