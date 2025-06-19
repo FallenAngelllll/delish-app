@@ -138,7 +138,7 @@ export default function MainPage() {
               )}
             </div>
 
-            <div>
+            <div className='gap-7'>
               <Heading level={2}>Избранные рестораны</Heading>
               {favorites.length > 0 ? (
                 <RestaurantList list={favorites} />
@@ -147,7 +147,7 @@ export default function MainPage() {
               )}
             </div>
 
-            <div>
+            <div className='gap-7'>
               <Heading level={2}>Недавно заказывали</Heading>
               {recent.length > 0 ? (
                 <RestaurantList list={recent} />
