@@ -1,4 +1,3 @@
-// components/organisms/BurgerMenu.tsx
 import { XMarkIcon } from '@heroicons/react/24/solid'
 
 import { Icon } from '@/components/atoms/icons/icon'

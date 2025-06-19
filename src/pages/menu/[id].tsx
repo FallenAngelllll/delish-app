@@ -39,7 +39,7 @@ export default function MenuPage() {
   }, [data])
 
   return (
-    <MainLayout backgroundFit='contain'>
+    <MainLayout backgroundFit='cover'>
       <PageTitleWithBack title={decodedName} />
       {!isLoading && !isError && menu ? (
         <Fragment>

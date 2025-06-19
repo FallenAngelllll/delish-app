@@ -7,6 +7,7 @@ import { Car } from './car'
 import { Chat } from './chat'
 import { Logo } from './logo'
 import { Storage } from './storage'
+import { Basket } from './basket'
 
 export const icons = {
   ...HeroIcons,
@@ -16,6 +17,7 @@ export const icons = {
   Storage,
   DiscountIcon,
   Star,
+  Basket,
 } as const
 
 export type IconName = keyof typeof icons

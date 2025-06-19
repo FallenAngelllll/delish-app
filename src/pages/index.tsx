@@ -20,7 +20,6 @@ export default function MainPage() {
   const [activeTab, setActiveTab] = useState('all')
   const [restaurants, setRestaurants] = useState<Restaurant[]>([])
 
-  // Для кнопки «Показать ещё»
   const INITIAL_COUNT = 6
   const INCREMENT = 6
   const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT)
@@ -82,17 +81,19 @@ export default function MainPage() {
     return list
   }, [restaurants, kitchenFilter, ratingFilter, timeFilter])
 
-  const anyFilter = Boolean(kitchenFilter || ratingFilter || timeFilter)
-
   const mobileList = filtered.slice(0, visibleCount)
   const hasMore = visibleCount < filtered.length
+
+  const all = filteredByFilters
+  const favorites = all.filter(r => r.favorite)
+  const recent = all.filter(r => r.recent)
 
   return (
     <MainLayout
       backgroundFit='cover'
-      containerClassName='mx-auto flex w-full max-w-screen-xl lg:items-center flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'
+      containerClassName='mx-auto flex w-full max-w-screen-xl flex-col gap-7 px-5 py-5 lg:px-12 lg:py-8 2xl:max-w-screen-2xl'
     >
-      <Heading>Все рестораны</Heading>
+      <Heading className='lg:text-center'>Все рестораны</Heading>
 
       <div className='lg:hidden'>
         <Tabs activeTab={activeTab} onChangeTab={setActiveTab} />
@@ -110,24 +111,50 @@ export default function MainPage() {
       {!isLoading && !isError ? (
         <Fragment>
           <div className='flex flex-col gap-4 lg:hidden'>
-            <RestaurantList list={mobileList} />
-            {hasMore && (
-              <button
-                type='button'
-                onClick={() => setVisibleCount(prev => prev + INCREMENT)}
-                className='rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800'
-              >
-                Показать ещё
-              </button>
+            {filtered.length > 0 ? (
+              <>
+                <RestaurantList list={mobileList} />
+                {hasMore && (
+                  <button
+                    type='button'
+                    onClick={() => setVisibleCount(prev => prev + INCREMENT)}
+                    className='rounded-xl bg-blue-600 px-4 py-2 text-white hover:bg-blue-700 active:bg-blue-800'
+                  >
+                    Показать ещё
+                  </button>
+                )}
+              </>
+            ) : (
+              <p className='text-gray-500 text-center'>Ничего не найдено</p>
             )}
           </div>
 
           <div className='hidden flex-col gap-7 lg:flex'>
-            <RestaurantList list={filteredByFilters} />
-            <Heading level={2}>Избранные рестораны</Heading>
-            <RestaurantList list={filteredByFilters.filter(r => r.favorite)} />
-            <Heading level={2}>Недавно заказывали</Heading>
-            <RestaurantList list={filteredByFilters.filter(r => r.recent)} />
+            <div>
+              {all.length > 0 ? (
+                <RestaurantList list={all} />
+              ) : (
+                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+              )}
+            </div>
+
+            <div>
+              <Heading level={2}>Избранные рестораны</Heading>
+              {favorites.length > 0 ? (
+                <RestaurantList list={favorites} />
+              ) : (
+                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+              )}
+            </div>
+
+            <div>
+              <Heading level={2}>Недавно заказывали</Heading>
+              {recent.length > 0 ? (
+                <RestaurantList list={recent} />
+              ) : (
+                <p className='text-gray-500 mt-5'>Ничего не найдено</p>
+              )}
+            </div>
           </div>
         </Fragment>
       ) : (
