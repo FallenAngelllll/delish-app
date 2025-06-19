@@ -23,7 +23,7 @@ export default function Tabs({
           <Tab
             key={id}
             className={({ selected }) =>
-              `relative text-sm ${selected ? 'font-bold text-blue-500' : 'text-gray-500'}`
+              `relative text-sm ${selected ? 'font-bold text-blue-500' : 'text-gray-500'} focus:outline-none`
             }
           >
             {label}
